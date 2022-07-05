@@ -23,9 +23,9 @@ Do it! 알고리즘 코딩테스트 30일 완성코스 스터디 레퍼지토리
 
 ### pull request
 
-- 1일 pull request 1개로 제목은 다음과 같이 작성
-- ex [overthename] 2021.07.04 1일차
-
+- 1일 pull request 1개로 제목과 내용은 다음과 같이 작성
+- 제목: [overthename] 2021.07.04 1일차
+- 내용: 오늘 푼 문제제목 나열
 
 
 ## 담당자
