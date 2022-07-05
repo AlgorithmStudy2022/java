@@ -15,7 +15,6 @@ public class P11720_숫자합 {
             sum += number.charAt(i) - '0';
         } // for
 
-        System.out.println(sum);
-
+        System.out.println(sum + " ");
     } // main
 } // class
