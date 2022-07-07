@@ -1,23 +1,25 @@
-package jun.day3.boj_5624;
+package jun.day_04.boj_1874;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 public class Main {
 
-    static int[] numbers;
-
     public static void main(String[] args) throws Exception {
-        int n = input.integer();
-        numbers = new int[n];
+//        int n = input.integer();
+        String a = new String("a").intern( );
+        String b = new String("a").intern( );
+        System.out.println(a==b);
+    }
 
-        for(int index=0; index<n; index++){
-            numbers[index] = input.integer();
-        }
-
-        Arrays.sort(numbers);
+    static Map<String, String> test(){
+        Map<String, String> map = new HashMap<>();
+        return map;
     }
 
     static Input input = new Input();
