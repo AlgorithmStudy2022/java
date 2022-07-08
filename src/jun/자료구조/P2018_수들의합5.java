@@ -1,10 +1,10 @@
-package jun.day3.boj_2018;
+package jun.자료구조;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
+public class P2018_수들의합5 {
 
     public static void main(String[] args) throws Exception {
         int n = input.integer();
