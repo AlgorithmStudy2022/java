@@ -1,25 +1,19 @@
-package jun.day_04.boj_1874;
+package jun.자료구조;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
 
-public class Main {
-
+public class P11720_숫자의_합_구하기 {
     public static void main(String[] args) throws Exception {
-//        int n = input.integer();
-        String a = new String("a").intern( );
-        String b = new String("a").intern( );
-        System.out.println(a==b);
-    }
+        int n = input.integer();
+        String b = input.next();
+        int sum = 0;
 
-    static Map<String, String> test(){
-        Map<String, String> map = new HashMap<>();
-        return map;
+        for (int i = 0; i < n; i++) {
+            sum += b.charAt(i) - 48;
+        }
+        System.out.print(sum);
     }
 
     static Input input = new Input();
