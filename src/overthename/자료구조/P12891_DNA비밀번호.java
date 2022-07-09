@@ -15,7 +15,7 @@ public class P12891_DNA비밀번호 {
 	static int checkSecret;
 
 	public static  void main(String[] args) throws IOException {
-		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		/*BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int S = Integer.parseInt(st.nextToken());
 		int P = Integer.parseInt(st.nextToken());
@@ -32,6 +32,6 @@ public class P12891_DNA비밀번호 {
 
 		}
 
-
-
+*/
+	}
 	}
