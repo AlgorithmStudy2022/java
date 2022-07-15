@@ -1,22 +1,27 @@
-package jun.정렬;
+package jun.datastructure;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class P2570_수_정렬하기1 {
+public class P1546_평균_구하기 {
     public static void main(String[] args) throws Exception {
         int n = input.integer();
-        int[] array = new int[n];
-        for (int index = 0; index < n; index++) {
-            array[index] = input.integer();
-        }
-        Arrays.sort(array);
+        float[] record = new float[n];
+        float max = 0;
+        float avg = 0;
 
-        for (int index = 0; index < n; index++) {
-            System.out.println(array[index]);
+        for (int i = 0; i < record.length; i++) {
+            record[i] = input.integer();
+            if (record[i] > max) {
+                max = record[i];
+            }
         }
+
+        for (int j = 0; j < record.length; j++) {
+            avg += (record[j] / max * 100);
+        }
+        System.out.println(avg / n);
     }
 
     static Input input = new Input();

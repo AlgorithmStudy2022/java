@@ -1,25 +1,35 @@
-package jun.자료구조;
+package jun.search;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
 
-public class P1874_스택수열 {
+public class P2023_신기한_소수찾기 {
+
+    private static final StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws Exception {
-//        int n = input.integer();
-        String a = new String("a").intern( );
-        String b = new String("a").intern( );
-        System.out.println(a==b);
+        int n = input.integer();
+        getAnswer(0, n);
+        System.out.println(sb);
     }
 
-    static Map<String, String> test(){
-        Map<String, String> map = new HashMap<>();
-        return map;
+    public static void getAnswer(int output, int n) {
+        if (n == 0) {
+            if (isPrime(output)) sb.append(output).append("\n");
+        }
+        for (int i = 0; i < 10; i++) {
+            int next = output * 10 + i;
+            if (isPrime(next)) getAnswer(next, n - 1);
+        }
+    }
+
+    public static boolean isPrime(int number) {
+        if (number < 2) return false;
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) return false;
+        }
+        return true;
     }
 
     static Input input = new Input();

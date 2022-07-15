@@ -1,27 +1,37 @@
-package jun.자료구조;
+package jun.search;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class P1546_평균_구하기 {
+public class P1300_배열에서_K번째_수_찾기 {
+
+    static long n, k;
+    static long result;
+
     public static void main(String[] args) throws Exception {
-        int n = input.integer();
-        float[] record = new float[n];
-        float max = 0;
-        float avg = 0;
+        n = input.inputLong();
+        k = input.inputLong();
 
-        for (int i = 0; i < record.length; i++) {
-            record[i] = input.integer();
-            if (record[i] > max) {
-                max = record[i];
-            }
-        }
+        long left = 1;
+        long right = k;
 
-        for (int j = 0; j < record.length; j++) {
-            avg += (record[j] / max * 100);
+        System.out.println(binarySearch(left, right));
+    }
+
+    static long binarySearch(long left, long right) {
+        int count = 0;
+        long mid = (left + right) / 2;
+        if (left > right) return result;
+
+        for (int index = 1; index < n; index++) {
+            count += Math.min(mid / index, n);
         }
-        System.out.println(avg / n);
+        if (k <= count) {
+            result = mid;
+            return binarySearch(left, mid - 1);
+        }
+        return binarySearch(mid + 1, right);
     }
 
     static Input input = new Input();
@@ -30,7 +40,7 @@ public class P1546_평균_구하기 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer("");
 
-        public int integer() throws Exception {
+        public long inputLong() throws Exception {
             if (!st.hasMoreElements()) st = new StringTokenizer(br.readLine());
             return Integer.parseInt(st.nextToken());
         }

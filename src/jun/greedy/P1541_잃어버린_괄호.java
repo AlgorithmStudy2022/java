@@ -1,18 +1,27 @@
-package jun.정렬;
+package jun.greedy;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class P1427_소트인사이트 {
-
+public class P1541_잃어버린_괄호 {
     public static void main(String[] args) throws Exception {
-        char[] arr = input.nToCharArray();
-        Arrays.sort(arr);
-        for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.print(arr[i]);
+        String[] cal = input.br.readLine().split("-");
+        int result = 0;
+
+        for (int index = 0; index < cal.length; index++) {
+            int sum = 0;
+            String[] subCal = cal[index].split("\\+");
+            for (int j = 0; j < subCal.length; j++) {
+                sum += Integer.parseInt(subCal[j]);
+            }
+            if (index == 0) {
+                result += sum;
+            } else {
+                result -= sum;
+            }
         }
+        System.out.println(result);
     }
 
     static Input input = new Input();
@@ -31,9 +40,9 @@ public class P1427_소트인사이트 {
             return st.nextToken();
         }
 
-        public char[] nToCharArray() throws Exception {
+        public long getLong() throws Exception {
             if (!st.hasMoreElements()) st = new StringTokenizer(br.readLine());
-            return st.nextToken().toCharArray();
+            return Integer.parseInt(st.nextToken());
         }
     }
 }

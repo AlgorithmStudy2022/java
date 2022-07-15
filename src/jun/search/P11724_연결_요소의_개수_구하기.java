@@ -1,19 +1,46 @@
-package jun.자료구조;
+package jun.search;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class P11720_숫자의_합_구하기 {
-    public static void main(String[] args) throws Exception {
-        int n = input.integer();
-        String b = input.next();
-        int sum = 0;
+public class P11724_연결_요소의_개수_구하기 {
+    static boolean[] visited;
+    static int n;
+    static int m;
+    static int[][] adj;
 
-        for (int i = 0; i < n; i++) {
-            sum += b.charAt(i) - 48;
+    public static void main(String[] args) throws Exception {
+        n = input.integer();
+        m = input.integer();
+        adj = new int[n + 1][n + 1];
+        visited = new boolean[n + 1];
+
+        for (int index = 0; index < m; index++) {
+            int start = input.integer();
+            int end = input.integer();
+            adj[start][end] = 1;
+            adj[end][start] = 1;
         }
-        System.out.print(sum);
+
+        int count = 0;
+        for (int index = 1; index < n + 1; index++) {
+            if (!visited[index]) {
+                dfs(index);
+                count++;
+            }
+        }
+
+        System.out.println(count);
+    }
+
+    private static void dfs(int index) {
+        visited[index] = true;
+        for (int i = 1; i < n + 1; i++) {
+            if (adj[index][i] == 1 && !visited[i]) {
+                dfs(i);
+            }
+        }
     }
 
     static Input input = new Input();
