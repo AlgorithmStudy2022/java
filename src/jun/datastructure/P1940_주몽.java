@@ -1,4 +1,4 @@
-package jun.자료구조;
+package jun.datastructure;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

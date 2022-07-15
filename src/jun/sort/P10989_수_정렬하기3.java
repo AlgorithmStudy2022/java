@@ -1,4 +1,4 @@
-package jun.정렬;
+package jun.sort;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,33 +1,37 @@
-package jun.탐색;
+package jun.theoryofnumbers;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
-public class P2023_신기한_소수찾기 {
+public class P1456_거의_소수 {
 
-    private static final StringBuilder sb = new StringBuilder();
+    static List<Integer> primes = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
-        int n = input.integer();
-        getAnswer(0, n);
-        System.out.println(sb);
-    }
+        int start = input.integer();
+        int end = input.integer();
 
-    public static void getAnswer(int output, int n) {
-        if (n == 0) {
-            if (isPrime(output)) sb.append(output).append("\n");
+        for (int index = start; index <= end; index++) {
+            if (isPrime(index)) primes.add(index);
         }
-        for (int i = 0; i < 10; i++) {
-            int next = output * 10 + i;
-            if (isPrime(next)) getAnswer(next, n - 1);
+
+        int result = 0;
+        for (int index = start; index <= end; index++) {
+            System.out.println();
+            if (primes.contains((int) Math.pow(index, 2))) {
+                result++;
+            }
         }
+        System.out.println(result);
     }
 
     public static boolean isPrime(int number) {
         if (number < 2) return false;
-        for (int i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i == 0) return false;
+        for (int index = 2; index < Math.sqrt(number); index++) {
+            if (number % index == 0) return false;
         }
         return true;
     }
@@ -46,11 +50,6 @@ public class P2023_신기한_소수찾기 {
         public String next() throws Exception {
             if (!st.hasMoreElements()) st = new StringTokenizer(br.readLine());
             return st.nextToken();
-        }
-
-        public char[] nToCharArray() throws Exception {
-            if (!st.hasMoreElements()) st = new StringTokenizer(br.readLine());
-            return st.nextToken().toCharArray();
         }
     }
 }

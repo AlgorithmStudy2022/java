@@ -1,23 +1,37 @@
-package jun.자료구조;
+package jun.search;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class P5624_좋은_수 {
+public class P1300_배열에서_K번째_수_찾기 {
 
-    static int[] numbers;
+    static long n, k;
+    static long result;
 
     public static void main(String[] args) throws Exception {
-        int n = input.integer();
-        numbers = new int[n];
+        n = input.inputLong();
+        k = input.inputLong();
 
-        for(int index=0; index<n; index++){
-            numbers[index] = input.integer();
+        long left = 1;
+        long right = k;
+
+        System.out.println(binarySearch(left, right));
+    }
+
+    static long binarySearch(long left, long right) {
+        int count = 0;
+        long mid = (left + right) / 2;
+        if (left > right) return result;
+
+        for (int index = 1; index < n; index++) {
+            count += Math.min(mid / index, n);
         }
-
-        Arrays.sort(numbers);
+        if (k <= count) {
+            result = mid;
+            return binarySearch(left, mid - 1);
+        }
+        return binarySearch(mid + 1, right);
     }
 
     static Input input = new Input();
@@ -26,7 +40,7 @@ public class P5624_좋은_수 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer("");
 
-        public int integer() throws Exception {
+        public long inputLong() throws Exception {
             if (!st.hasMoreElements()) st = new StringTokenizer(br.readLine());
             return Integer.parseInt(st.nextToken());
         }

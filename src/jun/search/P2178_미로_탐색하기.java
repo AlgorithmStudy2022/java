@@ -1,4 +1,4 @@
-package jun.탐색;
+package jun.search;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,19 +1,35 @@
-package jun.자료구조;
+package jun.search;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class P11720_숫자의_합_구하기 {
+public class P2023_신기한_소수찾기 {
+
+    private static final StringBuilder sb = new StringBuilder();
+
     public static void main(String[] args) throws Exception {
         int n = input.integer();
-        String b = input.next();
-        int sum = 0;
+        getAnswer(0, n);
+        System.out.println(sb);
+    }
 
-        for (int i = 0; i < n; i++) {
-            sum += b.charAt(i) - 48;
+    public static void getAnswer(int output, int n) {
+        if (n == 0) {
+            if (isPrime(output)) sb.append(output).append("\n");
         }
-        System.out.print(sum);
+        for (int i = 0; i < 10; i++) {
+            int next = output * 10 + i;
+            if (isPrime(next)) getAnswer(next, n - 1);
+        }
+    }
+
+    public static boolean isPrime(int number) {
+        if (number < 2) return false;
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) return false;
+        }
+        return true;
     }
 
     static Input input = new Input();

@@ -1,25 +1,22 @@
-package jun.자료구조;
+package jun.sort;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class P1874_스택수열 {
-
+public class P2570_수_정렬하기1 {
     public static void main(String[] args) throws Exception {
-//        int n = input.integer();
-        String a = new String("a").intern( );
-        String b = new String("a").intern( );
-        System.out.println(a==b);
-    }
+        int n = input.integer();
+        int[] array = new int[n];
+        for (int index = 0; index < n; index++) {
+            array[index] = input.integer();
+        }
+        Arrays.sort(array);
 
-    static Map<String, String> test(){
-        Map<String, String> map = new HashMap<>();
-        return map;
+        for (int index = 0; index < n; index++) {
+            System.out.println(array[index]);
+        }
     }
 
     static Input input = new Input();

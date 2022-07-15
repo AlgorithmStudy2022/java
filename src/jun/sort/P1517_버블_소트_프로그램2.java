@@ -1,18 +1,13 @@
-package jun.정렬;
+package jun.sort;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class P1427_소트인사이트 {
-
+public class P1517_버블_소트_프로그램2 {
     public static void main(String[] args) throws Exception {
-        char[] arr = input.nToCharArray();
-        Arrays.sort(arr);
-        for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.print(arr[i]);
-        }
+        int n = input.integer();
+
     }
 
     static Input input = new Input();
