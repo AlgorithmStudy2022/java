@@ -1,25 +1,27 @@
-package jun.day_04.boj_1874;
+package jun.datastructure;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
 
-public class Main {
-
+public class P1546_평균_구하기 {
     public static void main(String[] args) throws Exception {
-//        int n = input.integer();
-        String a = new String("a").intern( );
-        String b = new String("a").intern( );
-        System.out.println(a==b);
-    }
+        int n = input.integer();
+        float[] record = new float[n];
+        float max = 0;
+        float avg = 0;
 
-    static Map<String, String> test(){
-        Map<String, String> map = new HashMap<>();
-        return map;
+        for (int i = 0; i < record.length; i++) {
+            record[i] = input.integer();
+            if (record[i] > max) {
+                max = record[i];
+            }
+        }
+
+        for (int j = 0; j < record.length; j++) {
+            avg += (record[j] / max * 100);
+        }
+        System.out.println(avg / n);
     }
 
     static Input input = new Input();

@@ -1,11 +1,11 @@
-package jun.day3.boj_1940;
+package jun.datastructure;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
+public class P1940_주몽 {
 
     static int[] material;
 

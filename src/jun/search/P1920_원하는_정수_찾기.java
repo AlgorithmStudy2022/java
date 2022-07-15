@@ -1,23 +1,13 @@
-package jun.day3.boj_5624;
+package jun.search;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
-
-    static int[] numbers;
-
+public class P1920_원하는_정수_찾기 {
     public static void main(String[] args) throws Exception {
-        int n = input.integer();
-        numbers = new int[n];
 
-        for(int index=0; index<n; index++){
-            numbers[index] = input.integer();
-        }
 
-        Arrays.sort(numbers);
     }
 
     static Input input = new Input();
