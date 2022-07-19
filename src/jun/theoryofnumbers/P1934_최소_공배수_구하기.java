@@ -1,32 +1,35 @@
-package jun.greedy;
+package jun.theoryofnumbers;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class P11047_동전0 {
-    static int[] array;
-
+public class P1934_최소_공배수_구하기 {
     public static void main(String[] args) throws Exception {
         int n = input.integer();
-        array = new int[n];
-        int k = input.integer();
-
-        for (int index = n - 1; index >= 0; index--) {
-            array[index] = input.integer();
-        }
-
-        int count = 0;
 
         for (int index = 0; index < n; index++) {
-            int c = k / array[index];
-            count += c;
-            k -= (c) * array[index];
-            if (k == 0) {
-                System.out.println(count);
-                return;
-            }
+            int numberA = input.integer();
+            int numberB = input.integer();
+
+            int result = (numberA * numberB) / gcd(numberA, numberB);
+            System.out.println(result);
         }
+    }
+
+    // 최대공약수
+    public static int gcd(int a, int b) {
+        int big = a - b > 0 ? a : b;
+        int small = big == a ? b : a;
+
+        int r;
+        while (small > 0) {
+            r = big % small;
+            big = small;
+            small = r;
+
+        }
+        return big;
     }
 
     static Input input = new Input();
@@ -43,11 +46,6 @@ public class P11047_동전0 {
         public String next() throws Exception {
             if (!st.hasMoreElements()) st = new StringTokenizer(br.readLine());
             return st.nextToken();
-        }
-
-        public char[] nToCharArray() throws Exception {
-            if (!st.hasMoreElements()) st = new StringTokenizer(br.readLine());
-            return st.nextToken().toCharArray();
         }
     }
 }
