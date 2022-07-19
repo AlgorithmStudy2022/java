@@ -1,32 +1,13 @@
-package jun.greedy;
+package jun.search;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class P11047_동전0 {
-    static int[] array;
-
+public class P2343_블루레이_만들기 {
     public static void main(String[] args) throws Exception {
         int n = input.integer();
-        array = new int[n];
-        int k = input.integer();
-
-        for (int index = n - 1; index >= 0; index--) {
-            array[index] = input.integer();
-        }
-
-        int count = 0;
-
-        for (int index = 0; index < n; index++) {
-            int c = k / array[index];
-            count += c;
-            k -= (c) * array[index];
-            if (k == 0) {
-                System.out.println(count);
-                return;
-            }
-        }
+        int m = input.integer();
     }
 
     static Input input = new Input();
@@ -39,6 +20,7 @@ public class P11047_동전0 {
             if (!st.hasMoreElements()) st = new StringTokenizer(br.readLine());
             return Integer.parseInt(st.nextToken());
         }
+
 
         public String next() throws Exception {
             if (!st.hasMoreElements()) st = new StringTokenizer(br.readLine());
