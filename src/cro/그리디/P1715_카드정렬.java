@@ -1,6 +1,7 @@
 package cro.그리디;
 
 import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class P1715_카드정렬 {
@@ -9,7 +10,7 @@ public class P1715_카드정렬 {
 
         int N = sc.nextInt();
 
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        Queue<Integer> priorityQueue = new PriorityQueue<>();
 
         for(int i = 0; i < N; i++) {
             int data = sc.nextInt();
